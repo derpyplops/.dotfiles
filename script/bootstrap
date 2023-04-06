@@ -139,7 +139,16 @@ install_dotfiles () {
   link_file "$DOTFILES_ROOT/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 }
 
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install oh-my-zsh with local install_omz script
+if [ ! -d "$HOME/.oh-my-zsh" ]
+then
+  info 'installing oh-my-zsh'
+  sh $DOTFILES_ROOT/script/install_omz
+  success 'oh-my-zsh installed'
+else
+  info 'oh-my-zsh already installed'
+fi
+
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 setup_gitconfig
