@@ -532,7 +532,7 @@ EOF
     mkdir -p "$ZDOTDIR"
   fi
 
-  setup_ohmyzsh
+  # setup_ohmyzsh
   setup_zshrc
   setup_shell
 

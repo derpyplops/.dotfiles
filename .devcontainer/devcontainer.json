@@ -49,5 +49,5 @@
         }
     },
     "containerUser": "jon",
-    "onCreateCommand": "cp -r /workspaces/dotfiles /home/jon/.dotfiles"
+    "onCreateCommand": "cp -r /workspaces/dotfiles /home/jon/.dotfiles && mv /home/jon/.dotfiles/omz /home/jon/.oh-my-zsh"
 }
