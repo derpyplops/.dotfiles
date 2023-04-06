@@ -49,5 +49,5 @@
         }
     },
     "containerUser": "jon",
-    "onCreateCommand": "wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc"
+    "onCreateCommand": "git clone git@github.com:derpyplops/dotfiles.git ~/.dotfiles"
 }

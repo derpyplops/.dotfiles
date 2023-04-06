@@ -57,11 +57,6 @@ ENV PATH="$HOME/.local/bin:$PATH"
 RUN sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.10 get-pip.py
 
 # Set python aliases
-ADD .zshrc /home/$USERNAME/.zshrc
-RUN chmod 777 /home/$USERNAME/.zshrc
-
-ADD .p10k.zsh /home/$USERNAME/.p10k.zsh
-
 RUN sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
 RUN sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
 
