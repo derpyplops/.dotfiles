@@ -1,0 +1,53 @@
+{
+    "name": "Python 3",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "jon"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.formatting.autopep8Path": "autopep8",
+                "python.linting.mypyPath": "mypy",
+                "terminal.integrated.fontFamily": "MesloLGS NF",
+                "terminal.integrated.defaultProfile.linux": "tmux",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "zsh",
+                        "icon": "terminal-bash"
+                    },
+                    "bash": {
+                        "path": "bash",
+                        "icon": "terminal-bash"
+                    },
+                    "tmux": {
+                        "path": "zsh",
+                        "args": ["-c", "tmux new -ADs ${PWD##*/}"],
+                        "icon": "terminal-tmux"
+                    }
+                }
+            },
+            "extensions": [
+                "davidanson.vscode-markdownlint",
+                "donjayamanne.githistory",
+                "donjayamanne.python-extension-pack",
+                "github.vscode-pull-request-github",
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-vsliveshare.vsliveshare-pack",
+                "njpwerner.autodocstring",
+                "streetsidesoftware.code-spell-checker",
+                "tushortz.python-extended-snippets",
+                "yzhang.markdown-all-in-one",
+                "elagil.pre-commit-helper",
+                "eamodio.gitlens",
+                "GitHub.copilot",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "containerUser": "jon",
+    "onCreateCommand": "wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc"
+}
