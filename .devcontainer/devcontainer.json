@@ -49,5 +49,5 @@
         }
     },
     "containerUser": "jon",
-    "onCreateCommand": "git clone git@github.com:derpyplops/dotfiles.git ~/.dotfiles"
+    "onCreateCommand": "cp -r /workspaces/dotfiles /home/jon/.dotfiles"
 }
