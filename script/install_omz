@@ -352,8 +352,16 @@ setup_zshrc() {
 
   echo "${FMT_GREEN}Using the Oh My Zsh template file and adding it to $zdot/.zshrc.${FMT_RESET}"
 
+  echo "$zdot/.oh-my-zsh"
+
+  # if there is a .oh-my-zsh directory in the .dotfiles folder, copy it to the home directory
+  if [ -d "$HOME/.dotfiles/.oh-my-zsh" ]; then
+    cp -r "$HOME/.dotfiles/.oh-my-zsh" "$HOME"
+  fi
+
   # Modify $ZSH variable in .zshrc directory to use the literal $ZDOTDIR or $HOME
   omz="$ZSH"
+
   if [ -n "$ZDOTDIR" ] && [ "$ZDOTDIR" != "$HOME" ]; then
     omz=$(echo "$omz" | sed "s|^$ZDOTDIR/|\$ZDOTDIR/|")
   fi
