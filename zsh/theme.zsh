@@ -1,5 +1,5 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git)
+plugins=(git z)
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 setopt auto_cd
 
